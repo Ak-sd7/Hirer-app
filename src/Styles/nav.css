@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    box-shadow: 1px 7px 20px 7px rgb(154 154 75 / 20%);
+}
+.nav-items{
+    display: flex;
+    /* padding-top: 23px; */
+    list-style-type: none;
+    /* padding-right: 100px; */
+}
+.nav-items>li{
+    padding-right: 75px;
+    font-size: 25px;
+    font-family: Quicksand, Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-items > li:hover {
+    transform: translateY(-3px); /* Add this line for the elevation effect */
+  }
+
+.link:hover{
+    color:  #95af29;
+}
+
+.nav>div{
+    font-size: 38px;
+    font-family: Dancing Script, Verdana, Geneva, Tahoma, sans-serif;
+}
+.hirer{
+    padding-left: 50px;
+}
+
+.c{
+    color: #95af29;
+}
+
+.c:hover{
+    color: antiquewhite;
+}
+
+.link{
+    text-decoration: none;
+    color: antiquewhite;
+}
+/* #95af29 */
