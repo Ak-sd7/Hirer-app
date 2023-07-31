@@ -14,7 +14,7 @@
     box-shadow: none; /* No shadow at the start */
   }
   50% {
-    box-shadow: 15px 15px 200px rgba(153, 151, 37, 0.6); /* Shadow when it leaves the surface */
+    box-shadow: 15px 15px 200px #87a805; /* Shadow when it leaves the surface */
   }
   75% {
     box-shadow: none; /* No shadow as it returns */
@@ -37,6 +37,9 @@
 .intro>h2{
     line-height: 4rem;
 }
+.intro>h3{
+    font-size: 29px;
+}
 .image{
     padding-right: 100px;
     display: flex;
@@ -52,17 +55,19 @@
 .btn{
     text-decoration: none;
     background-color: black;
-    color: antiquewhite;
+    
     font-size: 25px;
     font-family: Open Sans, Verdana, Geneva, Tahoma, sans-serif;
     border-radius: 12px;
-    border-color: #95af29;
+    
     padding: 10px 10px 10px 10px;
     transition: transform 0.2s ease-in-out;
+    border-color: antiquewhite;
+    color: #95af29;
 }
 .btn:hover{
     /* background-color: bisque; */
-    border-color: antiquewhite;
-    color: #95af29;
+    border-color: #95af29;
+    color: antiquewhite;
     transform: translateY(-5px);
 }

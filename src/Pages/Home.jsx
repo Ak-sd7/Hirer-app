@@ -7,7 +7,7 @@ import H1 from "../Components/h1";
 const Home = () => {
 
   // This rule aims to prevent potential bugs and performance issues by ensuring that all dependencies of the useEffect and useMemo hooks are specified in their dependency arrays.
-  const texts = useMemo(()=>[" Hired", " Recognised", " Experience"], []);
+  const texts = useMemo(()=>[" Hired", " Recognised", " Experienced"], []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentText, setCurrentText] = useState(texts[currentIndex]);
@@ -34,8 +34,10 @@ const Home = () => {
               <h1 style={{color: "antiquewhite"}}><span style={{color: "#95af29"}}>Get</span>{currentText}</h1> 
               <h1 style={{color: "antiquewhite"}}>Make A Change</h1>
               <br/>
-              <h2 style={{color: "#95af29"}}>Connecting Talent with Opportunity:</h2> 
-              <h2 style={{color: "antiquewhite"}}>Your Path to Success Begins Here!</h2>
+              <h3 style={{color: "#95af29"}}>Connecting Talent with Opportunity:</h3>
+              <h3 style={{color: "antiquewhite"}}>Explore the possibilities.</h3>
+              <h3 style={{color: "antiquewhite"}}>Elevate Your Journey.</h3>
+              <h3 style={{color: "antiquewhite"}}>Your Path to Success Begins Here!</h3>
               <br/>
               <Link to={"/getstarted"}><button className="btn">Get Started ↪</button></Link>
           </div>
