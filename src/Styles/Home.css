@@ -34,11 +34,13 @@
     padding-right: 100px;
     text-align: center;
 }
-.intro>h2{
+.intro>h1{
     line-height: 4rem;
+    letter-spacing: 1px;
 }
 .intro>h3{
     font-size: 29px;
+    letter-spacing: 2px;
 }
 .image{
     padding-right: 100px;

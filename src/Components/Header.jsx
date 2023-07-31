@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import "../Styles/nav.css"
 import { Link as ScrollLink } from 'react-scroll';
-
+ 
 const Header = () => {
   return (
     <header>

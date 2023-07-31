@@ -2,7 +2,7 @@ import "../Styles/Home.css"
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom'
 // import Header from "../Components/Header";
-import H1 from "../Components/h1";
+import H1 from "../Components/headingOne";
 
 const Home = () => {
 
