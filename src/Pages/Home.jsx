@@ -9,11 +9,9 @@ const Home = () => {
   const [currentText, setCurrentText] = useState(texts[currentTextIndex]);
 
   useEffect(() => {
-    // Function to update the text every 3 seconds
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
     }, 2000);
-
     // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
   }, [texts.length]);
