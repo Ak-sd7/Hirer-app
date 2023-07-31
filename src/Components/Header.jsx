@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import "../Styles/nav.css"
+import { Link as ScrollLink } from 'react-scroll';
 
 const Header = () => {
   return (
@@ -11,11 +12,19 @@ const Header = () => {
                 <Link to="/" className="link">Home</Link>
             </li>
             <li>
-                <Link to="/mentor" className="link">Hire</Link>
+                <Link to="/hire" className="link">Hire</Link>
             </li>
             <li>
                 <Link to="/getHired" className="link">Get Hired</Link>
             </li>
+            <li>
+                <ScrollLink to="here" smooth={true} duration={500} className='link'>
+                    How it works ?
+                </ScrollLink>
+            </li>
+            {/* <li>
+                <Link to="/howdoesitwork" className="link">How it works ?</Link>
+            </li> */}
             <li>
                 <Link className='link' to={"/login"}>Login</Link>
             </li>

@@ -13,8 +13,8 @@
   0% {
     box-shadow: none; /* No shadow at the start */
   }
-  25% {
-    box-shadow: 12px 8px 100px rgba(83, 192, 16, 0.6); /* Shadow when it leaves the surface */
+  50% {
+    box-shadow: 15px 15px 200px rgba(153, 151, 37, 0.6); /* Shadow when it leaves the surface */
   }
   75% {
     box-shadow: none; /* No shadow as it returns */
@@ -23,7 +23,8 @@
 .home{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 55px;
+    padding-top: 65px;
+    padding-bottom: 30px;
 }
 .intro{
     color: aqua;

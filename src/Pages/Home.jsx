@@ -1,16 +1,20 @@
 import "../Styles/Home.css"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom'
+// import Header from "../Components/Header";
+import H1 from "../Components/h1";
 
 const Home = () => {
 
-  const texts = [" Hired", " Recognised", " Experience"];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [currentText, setCurrentText] = useState(texts[currentTextIndex]);
+  // This rule aims to prevent potential bugs and performance issues by ensuring that all dependencies of the useEffect and useMemo hooks are specified in their dependency arrays.
+  const texts = useMemo(()=>[" Hired", " Recognised", " Experience"], []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentText, setCurrentText] = useState(texts[currentIndex]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
     }, 2000);
     // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
@@ -18,11 +22,13 @@ const Home = () => {
 
   useEffect(() => {
     // Update the currentText whenever currentTextIndex changes
-    setCurrentText(texts[currentTextIndex]);
-  }, [currentTextIndex, texts]);
+    setCurrentText(texts[currentIndex]);
+  }, [currentIndex, texts]);
 
   return (
+    <div>
       <div className="home">
+        {/* <Header/> */}
           <div className="intro">
               <h1 style={{color: "antiquewhite"}}>Work Now</h1>
               <h1 style={{color: "antiquewhite"}}><span style={{color: "#95af29"}}>Get</span>{currentText}</h1> 
@@ -34,11 +40,15 @@ const Home = () => {
               <Link to={"/getstarted"}><button className="btn">Get Started ↪</button></Link>
           </div>
           <div className="image">
-            <img className="i_m" src="src\assets\intro-img.png" alt="image"/>
+            <img className="i_m" src="src\assets\intro-img.png" alt="image"/> 
+            {/* vector illustration */}
           </div>
       </div>
+      <div style={{paddingTop:"48px"}} id="here">
+        <H1/>
+      </div>
+    </div>
   )
 }
 
 export default Home
-// vector illustration
