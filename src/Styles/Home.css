@@ -1,9 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
+/* Add keyframes for the box shadow animation */
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: none; /* No shadow at the start */
+  }
+  25% {
+    box-shadow: 12px 8px 100px rgba(83, 192, 16, 0.6); /* Shadow when it leaves the surface */
+  }
+  75% {
+    box-shadow: none; /* No shadow as it returns */
+  }
+}
 .home{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 50px;
+    padding-top: 55px;
 }
 .intro{
     color: aqua;
@@ -11,4 +31,37 @@
     font-family: Open Sans;
     padding-left: 50px;
     padding-right: 100px;
+    text-align: center;
+}
+.intro>h2{
+    line-height: 4rem;
+}
+.image{
+    padding-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.i_m {
+  border-radius: 30px; 
+  transition: box-shadow 0.5s ease-in-out; /* Add a transition effect for the box shadow */
+  box-shadow: none; /* Initially, no box shadow */
+  animation: floatUpDown 3s ease-in-out infinite, shadowAnimation 3s ease-in-out infinite; /* Apply both animations */
+}
+.btn{
+    text-decoration: none;
+    background-color: black;
+    color: antiquewhite;
+    font-size: 25px;
+    font-family: Open Sans, Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 12px;
+    border-color: #95af29;
+    padding: 10px 10px 10px 10px;
+    transition: transform 0.2s ease-in-out;
+}
+.btn:hover{
+    /* background-color: bisque; */
+    border-color: antiquewhite;
+    color: #95af29;
+    transform: translateY(-5px);
 }
