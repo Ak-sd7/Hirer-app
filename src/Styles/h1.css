@@ -5,9 +5,7 @@
 /* heading */
 .introOne{
     color:blanchedalmond;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 100px;
+    padding: 25px 100px 20px 50px;
     text-align: center;
     font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -21,7 +19,7 @@
 .about{
     display:flex;
     justify-content: flex-start;
-    padding-left: 30px;
+    padding-left: 40px;
     padding-top: 40px;
     align-items: center;
 }
@@ -37,16 +35,14 @@
     text-align: center;
     font-family: Playfair Display, 'Courier New', Courier, monospace;
 }
-/* .dou>h2:hover{
-    color: #95af29;
-} */
 .dou>p{
     letter-spacing: 0.5px;
     word-spacing: 1.5px;
     line-height: 22px;
     text-align: center;
     border: 3px dotted #95af29;
-    padding: 14px;
+    padding: 12px;
+    padding-top: 10px;
     border-radius: 20px;
     font-family: Open Sans, 'Courier New', Courier, monospace;
 }
@@ -60,13 +56,60 @@
     border-radius: 80px;
     animation: floatUpDown 3s ease-in-out infinite;
 }
+.lOne{
+    padding-left: 130px;
+    /* border-radius: 20px; */
+    width: 450px;
+    transform: rotate(-15deg);
+    clip: rect(20px, 20px, 30px, 30px);
+}
 /* login detail */
 .logup{
     display: flex;
     justify-content: flex-end;
-    padding-top: 40px;
-    align-items: center
+    /* padding-top: 0px; */
+    align-items: center;
+    padding-right: 60px;
 }
+.losi{
+    color: antiquewhite;
+    width: 350px;
+    height: 300px;
+}
+.losi>h2{
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: Playfair Display, 'Courier New', Courier, monospace;
+}
+.losi>p{
+    letter-spacing: 0.5px;
+    word-spacing: 1.5px;
+    line-height: 22px;
+    text-align: center;
+    border: 3px dotted #95af29;
+    padding: 14px;
+    border-radius: 20px;
+    font-family: Open Sans, 'Courier New', Courier, monospace;
+}
+.losi>p:hover{
+    border-color:antiquewhite;
+    color: #d3f259;
+}
+.imm{
+    width: 280px;
+    animation: floatUpDown 3s ease-in-out infinite;
+    padding-right: 60px;
+}
+.lTwo{
+    padding-top: 50px;
+    padding-right: 147px;
+    /* border-radius: 20px; */
+    width: 450px;
+    /* transform: rotate(17deg); */
+    /* clip: rect(20px, 20px, 30px, 30px); */
+}
+/* FoHire */
 
 
-/* select it */

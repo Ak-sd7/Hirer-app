@@ -46,7 +46,8 @@ const Home = () => {
             {/* vector illustration */}
           </div>
       </div>
-      <div style={{paddingTop:"48px"}} id="here">
+      <div id="here"></div>
+      <div style={{paddingTop:"48px"}}>
         <H1/>
       </div>
     </div>

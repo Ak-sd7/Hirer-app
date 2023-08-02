@@ -18,7 +18,8 @@
 header{
     position: sticky;
     top: 0;
-    background-color: black;
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 1;
 }
 .nav-items{
