@@ -1,9 +1,10 @@
 import "../Styles/h1.css"
 
+
 const headingOne = () => {
   return (
     <div>
-        <div>
+        <div className="bagH">
           <div className="introOne">    
             <h1><span style={{color: "#95af29"}}>How</span> It Works...</h1>
             <h2> Introducing Hirer • • • •  A better way to get Hired / Hire</h2>
@@ -57,7 +58,8 @@ const headingOne = () => {
                 </p>
               </article>
           </div> 
-        </div>      
+        </div>
+        <div className="hh"></div>      
     </div>
   )
 }

@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
-
 /* heading */
+.bagH{
+    /* background-image: url("src/assets/bg.svg"); */
+    align-content: center;
+}
 .introOne{
     color:blanchedalmond;
     padding: 25px 100px 20px 50px;
@@ -17,6 +20,7 @@
 
 /* about hirer */
 .about{
+    /* background-color: black; */
     display:flex;
     justify-content: flex-start;
     padding-left: 40px;
@@ -25,8 +29,8 @@
 }
 .dou{
     color: antiquewhite;
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 .dou>h2{
     letter-spacing: 1px;
@@ -51,7 +55,7 @@
     color: #d3f259;
 }
 .imagg{
-    width: 350px;
+    width: 370px;
     padding-left: 60px;
     border-radius: 80px;
     animation: floatUpDown 3s ease-in-out infinite;
@@ -69,12 +73,12 @@
     justify-content: flex-end;
     /* padding-top: 0px; */
     align-items: center;
-    padding-right: 60px;
+    padding-right: 120px;
 }
 .losi{
     color: antiquewhite;
-    width: 350px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 }
 .losi>h2{
     letter-spacing: 2px;
