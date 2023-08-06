@@ -5,6 +5,7 @@ input{
     color:antiquewhite;
     background-color: black;
     width: 700px;
+    border-radius: 10px;
 }
 .LoginB{
     background-color: black;
@@ -18,4 +19,3 @@ input{
     border: 3px solid #95af29;
     color: beige;
 }
-

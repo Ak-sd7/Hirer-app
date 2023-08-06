@@ -19,6 +19,12 @@ const Login = () => {
           <Stack spacing={5} paddingLeft={5} sx={{ alignItems: "center", justifyContent: "center" }}>
             <input placeholder="email" type="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} required/>
             <input placeholder="password" type="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} required/>
+            <div className="toggle-container">
+              <input type="checkbox" id="rememberMe" />
+              <label className="toggle-label" htmlFor="rememberMe" style={{color:"red"}}>
+                Remember me
+              </label>
+          </div>
             <button className="LoginB" style={{width: "300px"}}>submit</button>
           </Stack>
         </form>
