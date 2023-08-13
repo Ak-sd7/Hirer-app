@@ -1,4 +1,4 @@
-input{
+.in{
     padding: 15px;
     font-size: 21px;
     border: 2px solid #95af29;
@@ -6,8 +6,22 @@ input{
     background-color: black;
     width: 700px;
     border-radius: 10px;
+    font-family: Quicksand, 'Courier New', Courier, monospace;
 }
+.toggle-container{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    width: 480px;
+
+}
+.toggle-container>h2{
+    font-family: Quicksand, 'Courier New', Courier, monospace;
+    color: #95af29; 
+}
+
 .LoginB{
+    font-family: Quicksand, 'Courier New', Courier, monospace;;
     background-color: black;
     padding: 12px;
     font-size: 22px;
@@ -18,4 +32,25 @@ input{
 .LoginB:hover{
     border: 3px solid #95af29;
     color: beige;
+}
+
+.toggle{
+    border-bottom: 2px solid #95af29;
+    border-radius: 10px;
+}
+
+.belowor{
+    color: rgb(189, 194, 194);
+    font-family: Quicksand, 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.belowor>h3:hover{
+    color: rgb(247, 247, 247);
+    border-bottom: 2px dotted #95af29;
+    cursor: pointer;
 }
