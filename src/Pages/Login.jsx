@@ -27,7 +27,7 @@ const Login = () => {
             <input className="in" placeholder="password" type="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} required/>
             <div className="toggle-container">
               <h2>Are you here to<span style={{color:"antiquewhite"}}> hire ?</span></h2>
-              <TStyle className="toggle" color="warning"/>
+              <TStyle className="toggle"/>
             </div>
             <button className="LoginB" style={{width: "300px"}}>submit</button>
           </Stack>
@@ -38,7 +38,7 @@ const Login = () => {
         </div>
       </div>
       <div style={{paddingTop: "10px"}}>
-        <img className="lo" style={{paddingLeft: "190px"}} src={s}/>
+        <img className="lo" src={s}/>
       </div>
     </div>
   )

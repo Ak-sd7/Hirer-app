@@ -2,7 +2,13 @@
 
 const Register = () => {
   return (
-    <div>Register</div> 
+    <div>
+      <div>
+        <div>
+          
+        </div>
+      </div>
+    </div>
   )
 }
 
