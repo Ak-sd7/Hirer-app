@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { toast } from "react-hot-toast";
 
 const Login = () => {
-  
+   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
