@@ -4,6 +4,7 @@ import { useState } from "react"
 import TStyle from "../subComponents/TStyle"
 import { Link } from "react-router-dom"
 import { toast } from "react-hot-toast";
+import s from "../assets/login-bg.a6f5d4be.svg"
 
 const Login = () => {
    
@@ -18,6 +19,7 @@ const Login = () => {
   }
 
   return (
+    <div style={{display: "flex", flexDirection: "row"}}>
       <div className="lmain">
         <form onSubmit={submitHandler}>
           <Stack spacing={5} paddingLeft={5} sx={{ alignItems: "center", justifyContent: "center" }}>
@@ -35,6 +37,10 @@ const Login = () => {
           <Link to={"/register"} className="ll"><h3>Register</h3></Link>
         </div>
       </div>
+      <div style={{paddingTop: "10px"}}>
+        <img className="lo" style={{paddingLeft: "190px"}} src={s}/>
+      </div>
+    </div>
   )
 }
 

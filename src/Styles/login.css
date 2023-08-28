@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center; 
     align-items: center; 
-    padding-top: 100px; 
+    padding-top: 50px; 
     align-content: center; 
     flex-direction: column; 
     max-height: 100vh;
-    max-width: 100wv;
+    max-width: 100vh;
 }
 .in{
     padding: 15px;
@@ -14,7 +14,7 @@
     border: 2px solid #95af29;
     color:antiquewhite;
     background-color: black;
-    width: 700px;
+    width: 600px;
     border-radius: 10px;
     font-family: Quicksand, 'Courier New', Courier, monospace;
 }
@@ -55,6 +55,7 @@
     font-family: Quicksand, 'Courier New', Courier, monospace;
     display: flex;
     width: 100vh;
+    height: 60px;
     padding-top: 30px;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -71,4 +72,8 @@
     color: rgb(255, 252, 252);
     padding-bottom: 5px;
     cursor: pointer;
+}
+.lo{
+    width: 680px;
+    animation: floatUpDown 4s ease-in-out infinite;
 }
