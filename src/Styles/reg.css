@@ -1,1 +1,28 @@
 
+.st{
+    padding: 70px 30px 50px 30px ;
+    display: flex;
+    justify-content: space-between;
+}
+.st>h1{
+    font-family: Open Sans;
+    color: antiquewhite;
+    padding-left: 300px;
+}
+.togg{
+    padding-right: 100px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    width: 400px;
+}
+.togg>h3{
+    font-family: Quicksand, 'Courier New', Courier, monospace;
+    color: #95af29; 
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+.ff{
+    padding-bottom: 50px;
+}
