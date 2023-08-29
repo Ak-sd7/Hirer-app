@@ -29,7 +29,7 @@ const Login = () => {
               <h2>Are you here to<span style={{color:"antiquewhite"}}> hire ?</span></h2>
               <TStyle className="toggle"/>
             </div>
-            <button className="LoginB" style={{width: "300px"}}>submit</button>
+            <button className="LoginB" style={{width: "230px"}}>submit</button>
           </Stack>
         </form> 
         <div className="belowor">
@@ -40,7 +40,7 @@ const Login = () => {
       <div style={{paddingTop: "10px"}}>
         <img className="lo" src={s}/>
       </div>
-    </div>
+    </div> 
   )
 }
 

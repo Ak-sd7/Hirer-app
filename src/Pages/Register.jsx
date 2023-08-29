@@ -1,13 +1,10 @@
 
+import Mreg from "../Components/Mreg"
 
 const Register = () => {
   return (
     <div>
-      <div>
-        <div>
-          
-        </div>
-      </div>
+      <Mreg/>
     </div>
   )
 }
