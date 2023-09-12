@@ -80,3 +80,8 @@
     width: 680px;
     animation: floatUpDown 4s ease-in-out infinite;
 }
+@media (max-width: 600pxpx) {
+    input {
+        width: 100%; /* You can adjust this value as needed */
+    }
+}
