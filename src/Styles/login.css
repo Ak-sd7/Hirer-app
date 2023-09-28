@@ -18,6 +18,11 @@
     border-radius: 10px;
     font-family: Quicksand, 'Courier New', Courier, monospace;
 }
+@media (max-width: 600px) {
+    .in{
+        width: 100%; /* You can adjust this value as needed */
+    }
+}
 .toggle-container{
     display: flex;
     align-items: stretch;
