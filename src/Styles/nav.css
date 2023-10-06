@@ -36,7 +36,7 @@ header{
     text-decoration: none;
     transition: transform 0.2s ease-in-out;
 }
-
+ 
 .nav-items > li:hover {
     transform: translateY(-3px); /* Add this line for the elevation effect */
   }
