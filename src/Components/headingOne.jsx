@@ -1,5 +1,5 @@
 import "../Styles/h1.css"
-
+import dot from "../assets/dot.svg"
 
 const headingOne = () => {
   return (
@@ -20,6 +20,7 @@ const headingOne = () => {
                 </p>
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
+              <img style={{paddingLeft:"33px"}} src={dot}/>
           </div>
           <div className="logup">
               {/* <img className="lTwo" src="src\assets\curved-arrow (2).png"/> */}
