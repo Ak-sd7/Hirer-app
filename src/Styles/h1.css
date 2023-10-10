@@ -17,7 +17,7 @@
     line-height: 4rem;
     letter-spacing: 1px;
 }
-
+ 
 /* about hirer */
 .about{
     /* background-color: black; */
@@ -30,7 +30,7 @@
 .dou{
     color: antiquewhite;
     width: 400px;
-    height: 400px;
+    /* height: 400px; */
 }
 .dou>h2{
     letter-spacing: 1px;
