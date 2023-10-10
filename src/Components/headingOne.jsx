@@ -1,5 +1,5 @@
 import "../Styles/h1.css"
-// import dot from "../assets/dot.svg"
+import dot from "../assets/dot.svg"
 import dot1 from "../assets/dot1.svg"
 import dot3 from "../assets/dot3.svg"
 
@@ -52,7 +52,7 @@ const headingOne = () => {
               <img src={dot3} />
           </div>
           <div className="logup">
-              
+              <img src={dot}/>
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>Getting Hired</h2>
@@ -63,6 +63,7 @@ const headingOne = () => {
                   HWIUERGFHI
                 </p>
               </article>
+              
           </div> 
         </div>
         <div className="hh"></div>      

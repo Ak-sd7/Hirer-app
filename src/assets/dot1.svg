@@ -1,17 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="459" height="404" viewBox="0 0 459 404" fill="none">
-  <g filter="url(#filter0_d_3_20)">
-    <path d="M5.49998 395.5C-9.48266 269.39 371.809 134.118 245.639 267.161C154.62 363.139 141.114 253.169 140.652 184.444C140.446 153.688 151.42 124.123 172.423 101.654C225.701 44.6581 341.46 -51.4195 454 38.5" stroke="#95AF29" stroke-width="2" stroke-dasharray="12 12" shape-rendering="crispEdges"/>
-  </g>
-  <defs>
-    <filter id="filter0_d_3_20" x="0.0840454" y="0.716171" width="458.54" height="402.902" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-      <feOffset dy="4"/>
-      <feGaussianBlur stdDeviation="2"/>
-      <feComposite in2="hardAlpha" operator="out"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_20"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_20" result="shape"/>
-    </filter>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="425" height="407" viewBox="0 0 425 407" fill="none">
+  <path d="M424.006 38.3653C250.5 -5.00001 66.5 283 66.5 104C66.5 -75 255.887 -1.13209 205 184C154.113 369.132 65.9785 268.849 0.999996 406.5" stroke="#95AF29" stroke-width="2" stroke-dasharray="12 12"/>
 </svg>
