@@ -49,10 +49,10 @@ const headingOne = () => {
                 </p>
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
-              <img src={dot3} />
+              {/* <img src={dot3} /> */}
           </div>
           <div className="logup">
-              <img src={dot}/>
+              {/* <img src={dot}/> */}
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>Getting Hired</h2>
