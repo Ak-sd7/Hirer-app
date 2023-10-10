@@ -1,6 +1,7 @@
 import "../Styles/h1.css"
-import dot from "../assets/dot.svg"
+// import dot from "../assets/dot.svg"
 import dot1 from "../assets/dot1.svg"
+import dot3 from "../assets/dot3.svg"
 
 const headingOne = () => {
   return (
@@ -22,14 +23,14 @@ const headingOne = () => {
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
               {/* dot image 1 */}
-              <img style={{paddingLeft:"33px"}} src={dot}/>
           </div>
           <div className="logup">
-              {/* <img className="lTwo" src="src\assets\curved-arrow (2).png"/> */}
+              {/* dot image 4 */}
+              <img src={dot1} style={{paddingRight: "70px", width: "450px", rotate:"2deg"}}/>
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>LogIn/SignUp</h2>
-                <p>
+                <p> 
                   sdebjfhkjwbdefikjbvfkjwbgfhkjRF
                   DAHSKFGVWHYKJGFIUQWERGF
                   WKJGRFIUYHQWEGRIHERQ
@@ -48,9 +49,10 @@ const headingOne = () => {
                 </p>
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
+              <img src={dot3} />
           </div>
           <div className="logup">
-              <img src={dot1}/>
+              
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>Getting Hired</h2>
