@@ -53,7 +53,7 @@ const HeadingOne = () => {
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
               {/* dot image 3 */}
-              <img src={dot1} style={{width: "500px", rotate:"-5deg", paddingTop: "15px"}}/>
+              <img src={dot1} style={{width: "450px", position:"absolute", right:"0", paddingBottom: "15px"}}/>
           </div>
           <div className="logup">
               {/*  */}
