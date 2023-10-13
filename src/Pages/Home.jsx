@@ -2,7 +2,7 @@ import "../Styles/Home.css"
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom'
 // import Header from "../Components/Header";
-import H1 from "../Components/headingOne";
+// import H1 from "../Components/headingOne";
 
 const Home = () => {
 
@@ -47,9 +47,9 @@ const Home = () => {
           </div>
       </div>
       <div className="hh" id="here"></div>
-      <div style={{paddingTop:"30px"}}>
+      {/* <div style={{paddingTop:"48px"}}>
         <H1/>
-      </div>
+      </div> */}
     </div>
   )
 }
