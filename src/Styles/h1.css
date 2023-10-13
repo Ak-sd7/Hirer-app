@@ -58,7 +58,7 @@
     width: 370px;
     padding-left: 60px;
     border-radius: 80px;
-    /* animation: floatUpDown 3s ease-in-out infinite; */
+    animation: floatUpDown 3s ease-in-out infinite;
 }
 .lOne{
     padding-left: 130px;
@@ -103,7 +103,7 @@
 }
 .imm{
     width: 280px;
-    /* animation: floatUpDown 3s ease-in-out infinite; */
+    animation: floatUpDown 3s ease-in-out infinite;
     padding-right: 60px;
 }
 .lTwo{

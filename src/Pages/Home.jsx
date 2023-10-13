@@ -47,7 +47,7 @@ const Home = () => {
           </div>
       </div>
       <div className="hh" id="here"></div>
-      <div style={{paddingTop:"48px"}}>
+      <div style={{paddingTop:"30px"}}>
         <H1/>
       </div>
     </div>

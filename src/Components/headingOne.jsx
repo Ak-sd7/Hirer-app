@@ -7,7 +7,7 @@ const headingOne = () => {
   return (
     <div>
         <div className="bagH">
-          <div className="introOne">    
+          <div className="introOne">   
             <h1><span style={{color: "#95af29"}}>How</span> It Works...</h1>
             <h2> Introducing Hirer • • • •  A better way to get Hired / Hire</h2>
           </div>
@@ -23,10 +23,11 @@ const headingOne = () => {
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
               {/* dot image 1 */}
+              <img style={{width: "436px"}} src={dot}/>
           </div>
           <div className="logup">
-              {/* dot image 4 */}
-              <img src={dot1} style={{paddingRight: "70px", width: "450px", rotate:"2deg"}}/>
+              {/* dot image 2 */}
+              <img src={dot3} style={{position: "absolute", left:"0", width:"500px"}}/>
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>LogIn/SignUp</h2>
@@ -49,10 +50,11 @@ const headingOne = () => {
                 </p>
               </article>             
               <img className="imagg" src="src\assets\about2.png"/>
-              {/* <img src={dot3} /> */}
+              {/* dot image 3 */}
+              <img src={dot1} style={{width: "500px", rotate:"-5deg", paddingTop: "15px"}}/>
           </div>
           <div className="logup">
-              {/* <img src={dot}/> */}
+              {/*  */}
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>Getting Hired</h2>
