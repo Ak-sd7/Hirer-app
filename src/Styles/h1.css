@@ -55,9 +55,10 @@
     color: #d3f259;
 }
 .imagg{
-    width: 370px;
+    width: 430px;
     padding-left: 60px;
     border-radius: 80px;
+    padding-bottom: 30px;
     animation: floatUpDown 3s ease-in-out infinite;
 }
 .lOne{
@@ -102,7 +103,7 @@
     color: #d3f259;
 }
 .imm{
-    width: 280px;
+    width: 340px;
     animation: floatUpDown 3s ease-in-out infinite;
     padding-right: 60px;
 }

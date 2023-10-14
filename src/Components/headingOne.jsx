@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../Styles/h1.css"
 import dot from "../assets/dot.svg"
 import dot1 from "../assets/dot1.svg"
@@ -5,7 +6,7 @@ import dot3 from "../assets/dot3.svg"
 
 const HeadingOne = () => {
   return (
-    <div style={{paddingTop: "48px"}}>
+    <div style={{paddingTop: "48px",  display: "flex", flexDirection:"column"}}>
         <div className="bagH">
           <div className="introOne">   
             <h1><span style={{color: "#95af29"}}>How</span> It Works...</h1>
@@ -51,25 +52,26 @@ const HeadingOne = () => {
                   with the contact details provided.
                 </p>
               </article>             
-              <img className="imagg" src="src\assets\about2.png"/>
+              <img className="imagg" src="src\assets\rec.png"/>
               {/* dot image 3 */}
               <img src={dot1} style={{width: "450px", position:"absolute", right:"0", paddingBottom: "15px"}}/>
           </div>
           <div className="logup">
               {/*  */}
-              <img className="imm" src="src\assets\login.png"/>
+              <img className="imm" style={{width:"400px"}} src="src\assets\hh.png"/>
               <article className="losi">
                 <h2>Getting Hired</h2>
                 <p>
-                  sdebjfhkjwbdefikjbvfkjwbgfhkjRF
-                  DAHSKFGVWHYKJGFIUQWERGF
-                  WKJGRFIUYHQWEGRIHERQ
-                  HWIUERGFHI
+                  The process of getting hired is quite simple. The recruiters would be provided by your profile  
+                  data, on the basis of their analysis and requirement criteria they would shortlist some profiles.
+                  Later, the shortlisted profiles would be assigned with some assignments and the selected profiles
+                  would be shortlisted. The hirig process would be followed by an interview, clearing which you
+                  would be able to join the company.
                 </p>
               </article>
-              
           </div> 
         </div>
+        <Link to={"/"}><button className="btn">Get Ahead !!</button></Link>
         <div className="hh"></div>      
     </div>
   )
