@@ -38,7 +38,7 @@ const HeadingOne = () => {
                   shared (i.e. mobile number, address, etc.). We have security and authentication to protect your data
                   while ensuring that your data is safe with us 🖤.
                 </p>
-              </article>
+              </article> 
           </div>
           <div className="about">
               <article className="dou">
