@@ -28,7 +28,7 @@ const HeadingOne = () => {
           </div>
           <div className="logup">
               {/* dot image 2 */}
-              <img src={dot3} style={{position: "absolute", left:"0", width:"444px"}}/>
+              <img src={dot3} style={{position: "absolute", left:"0", width:"430px"}}/>
               <img className="imm" src="src\assets\login.png"/>
               <article className="losi">
                 <h2>LogIn/SignUp</h2>
@@ -71,7 +71,9 @@ const HeadingOne = () => {
               </article>
           </div> 
         </div>
-        <Link to={"/"}><button className="btn">Get Ahead !!</button></Link>
+        <div style={{display: "flex", justifyContent:"center", paddingTop:"100px", paddingBottom:"30px"}}>
+          <Link to={"/"}><button className="btn">Get Ahead !!</button></Link>
+        </div>
         <div className="hh"></div>      
     </div>
   )
