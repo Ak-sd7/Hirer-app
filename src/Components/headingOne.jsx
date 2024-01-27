@@ -6,7 +6,7 @@ import dot3 from "../assets/dot3.svg"
 
 const HeadingOne = () => {
   return (
-    <div style={{paddingTop: "48px"}}>
+    <div style={{paddingTop: "48px"}}>99
         <div className="bagH">
           <div className="introOne">   
             <h1><span style={{color: "#95af29"}}>How</span> It Works...</h1>
