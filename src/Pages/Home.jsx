@@ -1,6 +1,7 @@
 import "../Styles/Home.css"
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom'
+import Counting from "../subComponents/counting";
 // import Header from "../Components/Header";
 // import H1 from "../Components/headingOne";
 
@@ -47,9 +48,7 @@ const Home = () => {
           </div>
       </div>
       <div className="hh" id="here"></div>
-      {/* <div style={{paddingTop:"48px"}}>
-        <H1/>
-      </div> */}
+      <Counting/>
     </div>
   )
 }
