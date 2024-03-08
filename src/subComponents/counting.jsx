@@ -1,8 +1,6 @@
 import "../Styles/count.css"
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import  {useEffect}  from "react";
-
-
+import {useEffect}  from "react";
 
 const Counting = () => {
     const Increment = (a)=>{
@@ -15,12 +13,12 @@ const Counting = () => {
           return animation.stop;
         },[count, a]);
       
-        return <motion.h1>{rounded}</motion.h1>;
+        return <motion.h1>{rounded}+</motion.h1>;
     }
 
     return(
         <div>
-            {Increment(1000)};
+            {Increment(1000)}
             hello
         </div>
     );
