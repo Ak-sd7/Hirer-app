@@ -1,4 +1,4 @@
-import { ListItem, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import "../Styles/count.css"
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import {useEffect}  from "react";
@@ -19,11 +19,13 @@ const Counting = () => {
 
     return(
         <div>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }}>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="space-between">
                 {Increment(10)}
-                <ListItem>Item 1</ListItem>
-                <ListItem>Item 2</ListItem>
-                <ListItem>Item 3</ListItem>
+                <div>
+                    
+                </div>
+                <div></div>
+                <div></div>
             </Stack>
         </div>
     );
