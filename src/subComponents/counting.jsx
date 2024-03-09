@@ -1,3 +1,4 @@
+import { ListItem, Stack } from "@mui/material";
 import "../Styles/count.css"
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import {useEffect}  from "react";
@@ -13,13 +14,17 @@ const Counting = () => {
           return animation.stop;
         },[count, a]);
       
-        return <motion.h1>{rounded}+</motion.h1>;
+        return <motion.h1>{rounded}</motion.h1>;
     }
 
     return(
         <div>
-            {Increment(1000)}
-            hello
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }}>
+                {Increment(10)}
+                <ListItem>Item 1</ListItem>
+                <ListItem>Item 2</ListItem>
+                <ListItem>Item 3</ListItem>
+            </Stack>
         </div>
     );
 }
