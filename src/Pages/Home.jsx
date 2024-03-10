@@ -49,6 +49,8 @@ const Home = () => {
       </div>
       <div className="hh" id="here"></div>
       <Counting/>
+      <div className="hh" id="here"></div>
+
     </div>
   )
 }

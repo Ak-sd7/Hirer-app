@@ -21,15 +21,15 @@ const Counting = () => {
         <div className="cmain">
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="space-evenly">
                 <div className="c1">
-                    {Increment(1000)}
+                    <div style={{display:"flex", flex:"row", justifyContent:"center", padding:"4px"}}>{Increment(1000)} <h1>+</h1></div>
                     <h3>Companies / Startups</h3>
                 </div>
                 <div className="c1">
-                    {Increment(2000)}
+                    <div style={{display:"flex", flex:"row", justifyContent:"center", padding:"4px"}}>{Increment(2000)} <h1>+</h1></div>
                     <h3>Enrolled Users</h3>
                 </div>
                 <div className="c1">
-                    {Increment(900)}
+                    <div style={{display:"flex", flex:"row", justifyContent:"center", padding:"4px"}}>{Increment(900)} <h1>+</h1></div>
                     <h3>Users Placed</h3>
                 </div>
             </Stack>
