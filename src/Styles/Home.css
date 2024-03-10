@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
 @keyframes floatUpDown {
   0%, 100% {
     transform: translateY(0);
@@ -29,7 +29,7 @@
 .intro{
     color: aqua;
     font-size: x-large;
-    font-family: Quicksand ,'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     padding-left: 50px;
     padding-right: 100px;
     text-align: center;

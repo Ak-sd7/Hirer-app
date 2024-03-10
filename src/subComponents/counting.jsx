@@ -20,9 +20,9 @@ const Counting = () => {
     return(
         <div>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="space-between">
-                {Increment(10)}
-                <div>
-                    
+                <div className="pl-6 flex flex-col text-slate-100">
+                    {Increment(1000)}+
+                    <h3>Companies / Startups</h3>
                 </div>
                 <div></div>
                 <div></div>
