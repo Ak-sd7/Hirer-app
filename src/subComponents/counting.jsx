@@ -13,19 +13,25 @@ const Counting = () => {
       
           return animation.stop;
         },[count, a]);
-      
-        return <motion.h1>{rounded}</motion.h1>;
+        
+        return <motion.h1 className="count">{rounded}</motion.h1>;
     }
 
     return(
-        <div>
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="space-between">
-                <div className="pl-6 flex flex-col text-slate-100">
-                    {Increment(1000)}+
+        <div className="cmain">
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} justifyContent="space-evenly">
+                <div className="c1">
+                    {Increment(1000)}
                     <h3>Companies / Startups</h3>
                 </div>
-                <div></div>
-                <div></div>
+                <div className="c1">
+                    {Increment(2000)}
+                    <h3>Enrolled Users</h3>
+                </div>
+                <div className="c1">
+                    {Increment(900)}
+                    <h3>Users Placed</h3>
+                </div>
             </Stack>
         </div>
     );

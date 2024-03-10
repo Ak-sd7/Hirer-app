@@ -1,0 +1,19 @@
+.cmain{
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+.c1{
+    display: flex;
+    /* font-size: 25px; */
+    flex-direction: column;
+    color: antiquewhite;
+    text-align: center;
+    font-family: Quicksand;
+}
+.count{
+    color: #95af29;
+    font-family: open sans;
+}
+.c1>h3{
+    font-size: 25px;
+}
