@@ -33,9 +33,11 @@
 }
 .scroll-parent {
     position: relative;
-    width: 100wv;
     height: 6.7rem;
     overflow: hidden;
+}
+.scroll-parent:before{
+    background: linear-gradient(rgba(240, 237, 237, 0.801), red);
 }
 
 .scroll-element {
