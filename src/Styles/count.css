@@ -23,8 +23,52 @@
 /* Infinite_scroller.jsx */
 .imain{
     background-color: #211f1f;
+    padding: 50px 60px 50px 60px;
 }
-.scroller{
-    text-align: center;
+.scroller_inner{
+    display: flex;
+    padding-block: 1rem;
+    justify-content: center;
+    gap: 1rem;
+}
+.scroll-parent {
+    position: relative;
+    width: 100wv;
+    height: 6.7rem;
+    overflow: hidden;
 }
 
+.scroll-element {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    animation: primary 11s linear infinite;
+}
+
+.primary {
+    animation: primary 11s linear infinite;
+}
+
+.secondary {
+    animation: secondary 11s linear infinite;
+}
+
+@keyframes primary {
+    from {
+        left: 0%;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes secondary {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0%;
+    }
+}
