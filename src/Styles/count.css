@@ -1,5 +1,6 @@
+/* counting.jsx */
 .cmain{
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 .c1{
@@ -13,8 +14,17 @@
 .count{
     color: #95af29;
     font-family: open sans;
-    padding: 3px;
+    padding-right: 7px;
 }
 .c1>h3{
     font-size: 25px;
 }
+
+/* Infinite_scroller.jsx */
+.imain{
+    background-color: #211f1f;
+}
+.scroller{
+    text-align: center;
+}
+
