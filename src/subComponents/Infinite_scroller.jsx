@@ -5,7 +5,7 @@ import postmate from "../assets/postmates-ar21.svg"
 import paypal from "../assets/paypal-ar21.svg"
 import gs from "../assets/goldmansachs-ar21.svg"
 import ibm from "../assets/ibm-ar21.svg"
-import lg from "../assets/lg-ar21.svg"
+import apple from "../assets/apple-ar21.svg"
 import mi from "../assets/mi-ar21.svg"
 
 const Infinite_scroller = () => {
@@ -19,7 +19,7 @@ const Infinite_scroller = () => {
                 <img src={paypal}/>
                 <img src={gs}/>
                 <img src={ibm}/>
-                <img src={lg}/>
+                <img src={apple}/>
                 <img src={mi}/>
                 
             </div>
@@ -30,7 +30,7 @@ const Infinite_scroller = () => {
                 <img src={paypal}/>
                 <img src={gs}/>
                 <img src={ibm}/>
-                <img src={lg}/>
+                <img src={apple}/>
                 <img src={mi}/>
                 
             </div>

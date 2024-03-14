@@ -27,34 +27,31 @@
 }
 .scroller_inner{
     display: flex;
-    padding-block: 1rem;
+    /* padding-block: 1rem; */
     justify-content: center;
     gap: 1rem;
 }
 .scroll-parent {
     position: relative;
-    height: 6.7rem;
+    height: 4.7rem;
     overflow: hidden;
+    border-radius: 500px;
 }
-.scroll-parent:before{
-    background: linear-gradient(rgba(240, 237, 237, 0.801), red);
-}
-
 .scroll-element {
     width: inherit;
     height: inherit;
     position: absolute;
     left: 0%;
     top: 0%;
-    animation: primary 11s linear infinite;
+    animation: primary 25s linear infinite;
 }
 
 .primary {
-    animation: primary 11s linear infinite;
+    animation: primary 25s linear infinite;
 }
 
 .secondary {
-    animation: secondary 11s linear infinite;
+    animation: secondary 25s linear infinite;
 }
 
 @keyframes primary {
