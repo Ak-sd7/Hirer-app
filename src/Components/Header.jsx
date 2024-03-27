@@ -8,9 +8,6 @@ const Header = () => {
         <div className='hirer'><Link className='link' to={"/"}><h2 className='c'>Hirer</h2></Link></div>
         <ul className="nav-items"> 
             <li>
-                <Link to="/" className="link">Home</Link>
-            </li>
-            <li>
                 <Link to="/hire" className="link">Hire</Link>
             </li>
             <li>
