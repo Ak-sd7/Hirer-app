@@ -12,8 +12,6 @@ export const Mreg = () => {
   const [password, setPassword] = useState("");
   const [company, setCompany] = useState("");
   const [phoneno, setNumber] = useState("");
-  const [stipend, setStipend] = useState();
-  const [duration, setDuration] = useState();
 
   const [showAreg, setShowAreg] = useState(false);
 
@@ -46,8 +44,6 @@ export const Mreg = () => {
                 <input className="in" placeholder="password" type="password" onChange={(e) => { setPassword(e.target.value); }} value={password} required />
                 <input className="in" placeholder="Phone No." type="tel" pattern="[0-9]{10}" onChange={(e) => { setNumber(e.target.value); }} value={phoneno} required />
                 <input className="in" placeholder="company Name" type="text" onChange={(e) => { setCompany(e.target.value); }} value={company} required />
-                <input className="in" placeholder="Stipend / Year" type="number" onChange={(e) => { setStipend(e.target.value); }} value={stipend} required />
-                <input className="in" placeholder="Duration" type="number" onChange={(e) => { setDuration(e.target.value); }} value={duration} required />
                 <button className="LoginB" style={{ width: "230px" }}>submit</button>
               </Stack>
             </form>
