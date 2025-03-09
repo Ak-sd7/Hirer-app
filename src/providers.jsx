@@ -7,6 +7,7 @@ export const Provider = ({children})=>{
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [loading, setLoading] = useState(false);
     const[user, setUser] = useState({});
+    const [server, setServer] = useState("");
 
     return(
         <Context.Provider
@@ -16,7 +17,9 @@ export const Provider = ({children})=>{
                 loading,
                 setLoading,
                 user,
-                setUser
+                setUser,
+                server,
+                setServer
             }}
         >
             {children}

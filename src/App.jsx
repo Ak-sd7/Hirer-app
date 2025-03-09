@@ -9,6 +9,11 @@ import HeadingOne from "./Components/headingOne"
 import {Toaster} from "react-hot-toast"
 import "./Styles/App.css" 
 
+
+export const aserver = "http://localhost:3000/api/v1/ausers";
+export const mserver = "http://localhost:3000/api/v1/musers";
+
+
 function App() {
   return(
     <Router>
