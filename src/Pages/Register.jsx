@@ -1,4 +1,3 @@
-
 import Mreg from "../Components/Mreg"
 
 const Register = () => {
