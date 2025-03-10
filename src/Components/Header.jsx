@@ -45,7 +45,7 @@ const Header = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
-      // setIsAuthenticated(true);
+      setIsAuthenticated(true);
       setLoading(false);
     }
   };
@@ -70,18 +70,27 @@ const Header = () => {
             </Link>
           </li>
           {isAuthenticated ? (
-            <IconButton
-              onClick={handleClick}
-              size="small"
-              sx={{ ml: 2 }}
-              aria-controls={open ? "account-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+            <li
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingTop: "0",
+                paddingBottom: "0",
+              }}
             >
-              <Avatar sx={{ width: 40, height: 40 }}>
-                {user?.name?.charAt(0)?.toUpperCase() || "?"}
-              </Avatar>
-            </IconButton>
+              <IconButton
+                onClick={handleClick}
+                size="small"
+                style={{ padding: "0", margin: "0" }}
+                aria-controls={open ? "account-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+              >
+                <Avatar style={{ height: "32px", width: "32px" }}>
+                  {user?.name?.charAt(0)?.toUpperCase() || "?"}
+                </Avatar>
+              </IconButton>
+            </li>
           ) : (
             <li>
               <Link className="link" to={"/login"}>
@@ -129,10 +138,12 @@ const Header = () => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Avatar /> Profile
+          <Avatar />
+          <Link to={"/profile"}>Profile</Link>
         </MenuItem>
         <Divider />
         <MenuItem
+          disabled={loading}
           onClick={async () => {
             handleClose();
             await LogOutHandler();
