@@ -1,11 +1,11 @@
-import Mreg from "../Components/Mreg"
+import Mreg from "../Components/Mreg";
 
 const Register = () => {
   return (
     <div>
-      <Mreg/>
+      <Mreg />
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

@@ -51,7 +51,7 @@ const Login = () => {
     }
   };
   if (isAuthenticated) {
-    return <Navigate to={hire==true?"/hire":"/getHired"} />;
+    return <Navigate to={hire == true ? "/hire" : "/getHired"} />;
   }
 
   return (
@@ -115,7 +115,7 @@ const Login = () => {
         </div>
       </div>
       <div style={{ paddingTop: "10px" }}>
-        <img className="lo" src={s} alt="Login background"/>
+        <img className="lo" src={s} alt="Login background" />
       </div>
     </div>
   );
