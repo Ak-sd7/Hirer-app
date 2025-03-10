@@ -16,7 +16,7 @@ import axios from "axios";
 function App() {
 
   const {setIsAuthenticated, setUser, setLoading, server} = useContextProvider();
-
+  console.log(server);
   useEffect(()=>{
       setLoading(true);
       axios
@@ -29,12 +29,12 @@ function App() {
           setLoading(false);
         })
         .catch((error)=>{
-          console.log(error.response.data.message);
+          console.log(error.response?.data?.message || "Failed to authenticate");
           setUser({});
           setIsAuthenticated(false);
           setLoading(false);
         })
-  },[]);
+  },[server]);
 
   return (
     <Router>

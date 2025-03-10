@@ -47,7 +47,7 @@ export const Mreg = () => {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
-      isAuthenticated(false);
+      setIsAuthenticated(false);
       setLoading(false);
     }
   };
