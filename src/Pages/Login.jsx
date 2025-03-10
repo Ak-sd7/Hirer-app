@@ -51,7 +51,7 @@ const Login = () => {
     }
   };
   if (isAuthenticated) {
-    return <Navigate to={"/hire"} />;
+    return <Navigate to={hire==true?"/hire":"/getHired"} />;
   }
 
   return (
