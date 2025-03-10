@@ -139,18 +139,21 @@ const Header = () => {
       >
         <MenuItem onClick={handleClose}>
           <Avatar />
-          <Link to={"/profile"}>Profile</Link>
+          <Link className="link" style={{ color: "black" }} to={"/profile"}>
+            Profile
+          </Link>
         </MenuItem>
         <Divider />
         <MenuItem
           disabled={loading}
+          style={{ cursor: loading ? "not-allowed" : "pointer", color: "red" }}
           onClick={async () => {
             handleClose();
             await LogOutHandler();
           }}
         >
           <ListItemIcon>
-            <LogOut />
+            <LogOut color="red" />
           </ListItemIcon>
           Logout
         </MenuItem>
