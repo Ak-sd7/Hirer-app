@@ -5,14 +5,37 @@ import Register from "./Pages/Register";
 import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
 import Hire from "./Pages/Hire";
+import GetHired from "./Pages/getHired";
 import HeadingOne from "./Components/headingOne";
 import { Toaster } from "react-hot-toast";
 import "./Styles/App.css";
-
-export const aserver = "http://localhost:3000/api/v1/ausers";
-export const mserver = "http://localhost:3000/api/v1/musers";
+import { useContextProvider } from "./providers";
+import { useEffect } from "react";
+import axios from "axios";
 
 function App() {
+
+  const {setIsAuthenticated, setUser, setLoading, server} = useContextProvider();
+
+  useEffect(()=>{
+      setLoading(true);
+      axios
+        .get(`${server}/me`, {
+          withCredentials:true
+        })
+        .then((res)=>{
+          setUser(res.data.user);
+          setIsAuthenticated(true);
+          setLoading(false);
+        })
+        .catch((error)=>{
+          console.log(error.response.data.message);
+          setUser({});
+          setIsAuthenticated(false);
+          setLoading(false);
+        })
+  },[]);
+
   return (
     <Router>
       <Header />
@@ -23,6 +46,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/getstarted" element={<HeadingOne />} />
         <Route path="/hire" element={<Hire />} />
+        <Route path="/getHired" element={<GetHired />} />
         {/* <Route path="*" element={<Home/>}/> */}
       </Routes>
       <Toaster />
