@@ -18,6 +18,7 @@ const Login = () => {
     loading,
     setLoading,
     setServer,
+    setUser,
   } = useContextProvider();
 
   const submitHandler = async (e) => {
@@ -40,6 +41,14 @@ const Login = () => {
           withCredentials: true,
         }
       );
+
+      const userResponse = await axios.get(`${server}/me`, {
+        withCredentials: true,
+      });
+
+      // Now set user data and authentication state
+      setUser(userResponse.data.user);
+
       toast.success(data.message);
       setIsAuthenticated(true);
       setLoading(false);
@@ -50,7 +59,7 @@ const Login = () => {
       setLoading(false);
     }
   };
-  if (isAuthenticated) {
+  if (isAuthenticated && !loading) {
     return <Navigate to={hire == true ? "/hire" : "/getHired"} />;
   }
 

@@ -14,27 +14,35 @@ import { useEffect } from "react";
 import axios from "axios";
 
 function App() {
-
-  const {setIsAuthenticated, setUser, setLoading, server} = useContextProvider();
+  const { setIsAuthenticated, setUser, setLoading, server } =
+    useContextProvider();
   console.log(server);
-  useEffect(()=>{
-      setLoading(true);
-      axios
-        .get(`${server}/me`, {
-          withCredentials:true
-        })
-        .then((res)=>{
-          setUser(res.data.user);
-          setIsAuthenticated(true);
-          setLoading(false);
-        })
-        .catch((error)=>{
-          console.log(error.response?.data?.message || "Failed to authenticate");
-          setUser({});
-          setIsAuthenticated(false);
-          setLoading(false);
-        })
-  },[server]);
+  useEffect(() => {
+    setLoading(true);
+
+    if (server === "") {
+      setUser({});
+      setIsAuthenticated(false);
+      setLoading(false);
+      return;
+    }
+
+    axios
+      .get(`${server}/me`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUser(res.data.user);
+        setIsAuthenticated(true);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.response?.data?.message || "Failed to authenticate");
+        setUser({});
+        setIsAuthenticated(false);
+        setLoading(false);
+      });
+  }, [server]);
 
   return (
     <Router>

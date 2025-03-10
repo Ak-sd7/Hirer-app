@@ -30,6 +30,7 @@ const Header = () => {
     setLoading,
     user,
     server,
+    setServer,
   } = useContextProvider();
 
   const LogOutHandler = async () => {
@@ -39,15 +40,16 @@ const Header = () => {
       });
       setIsAuthenticated(false);
       setLoading(false);
+      setServer("");
       toast.success("Logged Out Successfully");
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.message);
-      setIsAuthenticated(true);
+      // setIsAuthenticated(true);
       setLoading(false);
     }
   };
-  console.log(`User: ${JSON.stringify(user)}`);
+  console.log(isAuthenticated);
   return (
     <header>
       <nav className="nav">
@@ -77,7 +79,7 @@ const Header = () => {
               aria-expanded={open ? "true" : undefined}
             >
               <Avatar sx={{ width: 40, height: 40 }}>
-              {user?.name?.charAt(0)?.toUpperCase() || "?"}
+                {user?.name?.charAt(0)?.toUpperCase() || "?"}
               </Avatar>
             </IconButton>
           ) : (
