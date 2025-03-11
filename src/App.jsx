@@ -16,7 +16,7 @@ import Mprofile from "./Components/Mprofile";
 import Aprofile from "./Components/Aprofile";
 
 function App() {
-  const { setIsAuthenticated, setUser, setLoading, server } =
+  const { setIsAuthenticated, setUser, setLoading, server, user } =
     useContextProvider();
   console.log(server);
   useEffect(() => {
@@ -57,8 +57,8 @@ function App() {
         <Route path="/getstarted" element={<HeadingOne />} />
         <Route path="/hire" element={<Hire />} />
         <Route path="/getHired" element={<GetHired />} />
-        <Route path="/mprofile" element={<Mprofile />} />
-        <Route path="/aprofile" element={<Aprofile />} />
+        <Route path={`/mprofile/${user?.name}`} element={<Mprofile />} />
+        <Route path={`/aprofile/${user?.name}`} element={<Aprofile />} />
         {/* <Route path="*" element={<Home/>}/> */}
       </Routes>
       <Toaster />

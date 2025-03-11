@@ -19,6 +19,7 @@ const Login = () => {
     setLoading,
     setServer,
     setUser,
+    setType
   } = useContextProvider();
 
   const submitHandler = async (e) => {
@@ -30,6 +31,7 @@ const Login = () => {
         hire == true
           ? "http://localhost:3000/api/v1/musers"
           : "http://localhost:3000/api/v1/ausers";
+      {hire==true ? setType("musers") : setType("ausers")}
       setServer(server);
       const { data } = await axios.post(
         `${server}/login`,

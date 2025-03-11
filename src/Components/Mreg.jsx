@@ -23,11 +23,13 @@ export const Mreg = () => {
     loading,
     setLoading,
     setServer,
+    setType
   } = useContextProvider();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const server = "http://localhost:3000/api/v1/musers";
+    setType("musers");
     setServer(server);
     setLoading(true);
     try {

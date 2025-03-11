@@ -8,6 +8,7 @@ export const Provider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const [server, setServer] = useState("");
+  const [type, setType] = useState("");
 
   return (
     <Context.Provider
@@ -20,6 +21,8 @@ export const Provider = ({ children }) => {
         setUser,
         server,
         setServer,
+        type, 
+        setType
       }}
     >
       {children}

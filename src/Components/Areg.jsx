@@ -24,6 +24,7 @@ const Areg = () => {
     loading,
     setLoading,
     setServer,
+    setType
   } = useContextProvider();
 
   const submitHandler = async (e) => {
@@ -31,6 +32,7 @@ const Areg = () => {
     setLoading(true);
     try {
       const server = "http://localhost:3000/api/v1/ausers";
+      setType("ausers");
       setServer(server);
       const { data } = await axios.post(
         `${server}/new`,
