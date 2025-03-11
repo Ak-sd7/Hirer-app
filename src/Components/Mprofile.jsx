@@ -1,4 +1,15 @@
-import { Card, CardContent, Avatar, Typography, Box, Divider, Grid, Button, Chip, Paper } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Avatar,
+  Typography,
+  Box,
+  Divider,
+  Grid,
+  Button,
+  Chip,
+  Paper,
+} from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -6,7 +17,9 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AddIcon from "@mui/icons-material/Add";
 import WorkIcon from "@mui/icons-material/Work";
 import EditIcon from "@mui/icons-material/Edit";
+import JobPost from "../subComponents/jobPost";
 import "../Styles/features.css";
+import { useState } from "react";
 
 const Mprofile = ({ userData, jobPosts = [] }) => {
   // Sample user data - replace with actual data from your application
@@ -15,8 +28,13 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
     email: "john.doe@example.com",
     companyName: "Acme Corporation",
     phoneNo: "1234567890",
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   };
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   // Function to format date
   const formatDate = (dateString) => {
@@ -24,7 +42,7 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
-      day: "numeric"
+      day: "numeric",
     });
   };
 
@@ -32,7 +50,7 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
   const getInitials = (name) => {
     return name
       .split(" ")
-      .map(part => part[0])
+      .map((part) => part[0])
       .join("")
       .toUpperCase();
   };
@@ -40,18 +58,18 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
   return (
     <div className="Card">
       {/* Profile Information Section with improved styling */}
-      <Paper 
-        elevation={3} 
+      <Paper
+        elevation={3}
         sx={{
           overflow: "hidden",
           borderRadius: 4,
           transition: "all 0.3s",
           "&:hover": {
-            boxShadow: 6
-          }
+            boxShadow: 6,
+          },
         }}
       >
-        <Card 
+        <Card
           sx={{
             display: "flex",
             minWidth: 345,
@@ -59,11 +77,11 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
             bgcolor: "white",
             borderRadius: 4,
             overflow: "hidden",
-            boxShadow: "none"
+            boxShadow: "none",
           }}
         >
           {/* Left side - Avatar */}
-          <Box 
+          <Box
             sx={{
               width: "30%",
               display: "flex",
@@ -73,18 +91,18 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
               bgcolor: "#3e4646",
               color: "white",
               p: 3,
-              position: "relative"
+              position: "relative",
             }}
           >
-            <Avatar 
-              sx={{ 
-                width: 120, 
-                height: 120, 
+            <Avatar
+              sx={{
+                width: 120,
+                height: 120,
                 bgcolor: "#95af29",
                 fontSize: 48,
                 mb: 3,
                 border: "4px solid white",
-                boxShadow: 2
+                boxShadow: 2,
               }}
             >
               {getInitials(user.name)}
@@ -102,8 +120,8 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                 borderColor: "white",
                 "&:hover": {
                   borderColor: "#95af29",
-                  bgcolor: "rgba(255, 255, 255, 0.1)"
-                }
+                  bgcolor: "rgba(255, 255, 255, 0.1)",
+                },
               }}
             >
               Edit Profile
@@ -112,9 +130,16 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
 
           {/* Right side - User Information */}
           <CardContent sx={{ width: "70%", p: 4 }}>
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-              <Typography 
-                variant="h5" 
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                mb: 2,
+              }}
+            >
+              <Typography
+                variant="h5"
                 sx={{
                   fontWeight: "bold",
                   position: "relative",
@@ -126,27 +151,27 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                     width: "60%",
                     height: 3,
                     bgcolor: "#95af29",
-                    borderRadius: 1
-                  }
+                    borderRadius: 1,
+                  },
                 }}
               >
                 Profile Information
               </Typography>
             </Box>
             <Divider sx={{ mb: 3 }} />
-            
+
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <Paper 
-                  elevation={1} 
-                  sx={{ 
-                    p: 2, 
+                <Paper
+                  elevation={1}
+                  sx={{
+                    p: 2,
                     borderRadius: 2,
                     transition: "all 0.2s",
                     "&:hover": {
                       boxShadow: 3,
-                      bgcolor: "#f9f9f9"
-                    }
+                      bgcolor: "#f9f9f9",
+                    },
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -162,22 +187,24 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                   </Box>
                 </Paper>
               </Grid>
-              
+
               <Grid item xs={12}>
-                <Paper 
-                  elevation={1} 
-                  sx={{ 
-                    p: 2, 
+                <Paper
+                  elevation={1}
+                  sx={{
+                    p: 2,
                     borderRadius: 2,
                     transition: "all 0.2s",
                     "&:hover": {
                       boxShadow: 3,
-                      bgcolor: "#f9f9f9"
-                    }
+                      bgcolor: "#f9f9f9",
+                    },
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <BusinessIcon sx={{ mr: 2, color: "#3e4646", fontSize: 28 }} />
+                    <BusinessIcon
+                      sx={{ mr: 2, color: "#3e4646", fontSize: 28 }}
+                    />
                     <Box>
                       <Typography variant="body2" color="text.secondary">
                         Company
@@ -189,18 +216,18 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                   </Box>
                 </Paper>
               </Grid>
-              
+
               <Grid item xs={12}>
-                <Paper 
-                  elevation={1} 
-                  sx={{ 
-                    p: 2, 
+                <Paper
+                  elevation={1}
+                  sx={{
+                    p: 2,
                     borderRadius: 2,
                     transition: "all 0.2s",
                     "&:hover": {
                       boxShadow: 3,
-                      bgcolor: "#f9f9f9"
-                    }
+                      bgcolor: "#f9f9f9",
+                    },
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -216,22 +243,24 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                   </Box>
                 </Paper>
               </Grid>
-              
+
               <Grid item xs={12}>
-                <Paper 
-                  elevation={1} 
-                  sx={{ 
-                    p: 2, 
+                <Paper
+                  elevation={1}
+                  sx={{
+                    p: 2,
                     borderRadius: 2,
                     transition: "all 0.2s",
                     "&:hover": {
                       boxShadow: 3,
-                      bgcolor: "#f9f9f9"
-                    }
+                      bgcolor: "#f9f9f9",
+                    },
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <CalendarTodayIcon sx={{ mr: 2, color: "#3e4646", fontSize: 28 }} />
+                    <CalendarTodayIcon
+                      sx={{ mr: 2, color: "#3e4646", fontSize: 28 }}
+                    />
                     <Box>
                       <Typography variant="body2" color="text.secondary">
                         Member Since
@@ -249,15 +278,20 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
       </Paper>
 
       {/* Job Postings Section with improved styling */}
-      <Paper elevation={3} sx={{ mt: 4, p: 3, borderRadius: 3, bgcolor: "#f5f5f5" }}>
-        <Box sx={{ 
-          display: "flex", 
-          justifyContent: "space-between", 
-          alignItems: "center",
-          mb: 2,
-        }}>
-          <Typography 
-            variant="h5" 
+      <Paper
+        elevation={3}
+        sx={{ mt: 4, p: 3, borderRadius: 3, bgcolor: "#f5f5f5" }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 2,
+          }}
+        >
+          <Typography
+            variant="h5"
             sx={{
               color: "#95af29",
               fontWeight: "bold",
@@ -270,15 +304,15 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
                 width: "60%",
                 height: 3,
                 bgcolor: "#95af29",
-                borderRadius: 1
-              }
+                borderRadius: 1,
+              },
             }}
           >
             Job Postings
           </Typography>
-          
-          <Button 
-            variant="contained" 
+
+          <Button
+            variant="contained"
             startIcon={<AddIcon />}
             sx={{
               bgcolor: "#95af29",
@@ -290,131 +324,150 @@ const Mprofile = ({ userData, jobPosts = [] }) => {
               "&:hover": {
                 bgcolor: "#7a9124",
                 transform: "translateY(-2px)",
-                boxShadow: 3
-              }
+                boxShadow: 3,
+              },
             }}
+            onClick={handleOpen}
           >
             Create New Job
           </Button>
+
+          <JobPost open={open} handleClose={handleClose} />
         </Box>
 
         <Divider sx={{ mb: 3 }} />
-        
+
         {jobPosts.length === 0 ? (
-          <Card sx={{ 
-            p: 4, 
-            textAlign: "center", 
-            bgcolor: "white", 
-            borderRadius: 3,
-            boxShadow: 2,
-            transition: "transform 0.3s",
-            "&:hover": {
-              transform: "translateY(-5px)",
-              boxShadow: 4
-            }
-          }}>
+          <Card
+            sx={{
+              p: 4,
+              textAlign: "center",
+              bgcolor: "white",
+              borderRadius: 3,
+              boxShadow: 2,
+              transition: "transform 0.3s",
+              "&:hover": {
+                transform: "translateY(-5px)",
+                boxShadow: 4,
+              },
+            }}
+          >
             <WorkIcon sx={{ fontSize: 80, color: "#95af29", mb: 2 }} />
-            <Typography variant="h5" color="#3e4646" gutterBottom fontWeight="bold">
+            <Typography
+              variant="h5"
+              color="#3e4646"
+              gutterBottom
+              fontWeight="bold"
+            >
               No Job Postings Yet
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
               Create your first job posting to start receiving applications.
             </Typography>
-            <Button 
-              variant="outlined" 
-              startIcon={<AddIcon />}
-              sx={{ 
-                color: "#95af29", 
-                borderColor: "#95af29",
-                mt: 2,
-                "&:hover": {
-                  borderColor: "#7a9124",
-                  bgcolor: "rgba(149, 175, 41, 0.1)"
-                }
-              }}
-            >
-              Get Started
-            </Button>
           </Card>
         ) : (
           <Grid container spacing={3}>
             {jobPosts.map((job, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
-                <Card sx={{ 
-                  height: "100%", 
-                  borderRadius: 3, 
-                  boxShadow: 2,
-                  transition: "all 0.3s",
-                  "&:hover": {
-                    transform: "translateY(-5px)",
-                    boxShadow: 4
-                  }
-                }}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    borderRadius: 3,
+                    boxShadow: 2,
+                    transition: "all 0.3s",
+                    "&:hover": {
+                      transform: "translateY(-5px)",
+                      boxShadow: 4,
+                    },
+                  }}
+                >
                   <CardContent>
                     <Typography variant="h6" gutterBottom fontWeight="bold">
                       {job.title}
                     </Typography>
-                    
+
                     <Box sx={{ display: "flex", mb: 2 }}>
-                      <Chip 
-                        label={job.jobType} 
-                        size="small" 
-                        sx={{ 
-                          mr: 1, 
-                          bgcolor: "#3e4646", 
+                      <Chip
+                        label={job.jobType}
+                        size="small"
+                        sx={{
+                          mr: 1,
+                          bgcolor: "#3e4646",
                           color: "white",
-                          fontWeight: "medium" 
+                          fontWeight: "medium",
                         }}
                       />
-                      <Chip 
-                        label={`₹${job.salary}`} 
-                        size="small" 
-                        sx={{ 
-                          bgcolor: "#95af29", 
+                      <Chip
+                        label={`₹${job.salary}`}
+                        size="small"
+                        sx={{
+                          bgcolor: "#95af29",
                           color: "white",
-                          fontWeight: "medium" 
+                          fontWeight: "medium",
                         }}
                       />
                     </Box>
-                    
-                    <Typography variant="body2" color="text.secondary" paragraph>
+
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      paragraph
+                    >
                       {job.description?.substring(0, 100)}...
                     </Typography>
-                    
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
-                      <Typography variant="caption" sx={{ fontWeight: "medium", color: "#3e4646" }}>
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        mt: 2,
+                      }}
+                    >
+                      <Typography
+                        variant="caption"
+                        sx={{ fontWeight: "medium", color: "#3e4646" }}
+                      >
                         Posted: {formatDate(job.createdAt)}
                       </Typography>
-                      <Typography variant="caption" sx={{ fontWeight: "medium", color: "#e53935" }}>
+                      <Typography
+                        variant="caption"
+                        sx={{ fontWeight: "medium", color: "#e53935" }}
+                      >
                         Expires: {formatDate(job.expiresAt)}
                       </Typography>
                     </Box>
-                    
+
                     <Divider sx={{ my: 2 }} />
-                    
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
-                      <Button 
-                        size="small" 
+
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        mt: 2,
+                      }}
+                    >
+                      <Button
+                        size="small"
                         variant="outlined"
-                        sx={{ 
-                          borderColor: "#3e4646", 
+                        sx={{
+                          borderColor: "#3e4646",
                           color: "#3e4646",
                           "&:hover": {
                             borderColor: "#1e2424",
-                            bgcolor: "rgba(62, 70, 70, 0.1)"
-                          }
+                            bgcolor: "rgba(62, 70, 70, 0.1)",
+                          },
                         }}
                       >
                         View Details
                       </Button>
-                      <Button 
-                        size="small" 
+                      <Button
+                        size="small"
                         variant="contained"
-                        sx={{ 
-                          bgcolor: "#95af29", 
+                        sx={{
+                          bgcolor: "#95af29",
                           "&:hover": {
-                            bgcolor: "#7a9124"
-                          }
+                            bgcolor: "#7a9124",
+                          },
                         }}
                       >
                         Applications ({job.applications || 0})
