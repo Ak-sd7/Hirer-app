@@ -12,6 +12,8 @@ import "./Styles/App.css";
 import { useContextProvider } from "./providers";
 import { useEffect } from "react";
 import axios from "axios";
+import Mprofile from "./Components/Mprofile";
+import Aprofile from "./Components/Aprofile";
 
 function App() {
   const { setIsAuthenticated, setUser, setLoading, server } =
@@ -55,6 +57,8 @@ function App() {
         <Route path="/getstarted" element={<HeadingOne />} />
         <Route path="/hire" element={<Hire />} />
         <Route path="/getHired" element={<GetHired />} />
+        <Route path="/mprofile" element={<Mprofile />} />
+        <Route path="/aprofile" element={<Aprofile />} />
         {/* <Route path="*" element={<Home/>}/> */}
       </Routes>
       <Toaster />
