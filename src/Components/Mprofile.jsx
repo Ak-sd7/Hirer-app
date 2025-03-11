@@ -22,7 +22,7 @@ import "../Styles/features.css";
 import { useState } from "react";
 import { useContextProvider } from "../providers";
 
-const Mprofile = ({ jobPosts = [] }) => {
+const Mprofile = ({ jobPosts }) => {
   const { user: userData } = useContextProvider();
   console.log(userData._id);
   const user = userData || {
@@ -389,7 +389,7 @@ const Mprofile = ({ jobPosts = [] }) => {
 
                     <Box sx={{ display: "flex", mb: 2 }}>
                       <Chip
-                        label={job.jobType}
+                        label={job.employmentType}
                         size="small"
                         sx={{
                           mr: 1,
@@ -434,7 +434,7 @@ const Mprofile = ({ jobPosts = [] }) => {
                         variant="caption"
                         sx={{ fontWeight: "medium", color: "#e53935" }}
                       >
-                        Expires: {formatDate(job.expiresAt)}
+                        Expires: {formatDate(job.validity)}
                       </Typography>
                     </Box>
 

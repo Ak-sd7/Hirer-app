@@ -1,6 +1,9 @@
+
 const Hire = () => {
   return (
-    <div>Hire</div>
+    <div>
+      hello
+    </div>
   )
 }
 

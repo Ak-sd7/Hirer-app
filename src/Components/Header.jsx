@@ -140,7 +140,7 @@ const Header = () => {
       >
         <MenuItem onClick={handleClose}>
           <Avatar />
-          <Link className="link" style={{ color: "black" }} to={type==="musers"?`/mprofile/${user?.name}`:`/aprofile/${user?.name}`}>
+          <Link className="link" style={{ color: "black" }} to={`/profile/${user?.name}`}>
             Profile
           </Link>
         </MenuItem>

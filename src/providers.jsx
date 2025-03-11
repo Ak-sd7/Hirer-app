@@ -9,6 +9,7 @@ export const Provider = ({ children }) => {
   const [user, setUser] = useState({});
   const [server, setServer] = useState("");
   const [type, setType] = useState("");
+  const [mposts, setMposts] = useState([]);
 
   return (
     <Context.Provider
@@ -22,7 +23,9 @@ export const Provider = ({ children }) => {
         server,
         setServer,
         type, 
-        setType
+        setType,
+        mposts,
+        setMposts
       }}
     >
       {children}
