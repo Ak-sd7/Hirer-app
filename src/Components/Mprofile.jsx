@@ -1,15 +1,4 @@
-import {
-  Card,
-  CardContent,
-  Avatar,
-  Typography,
-  Box,
-  Divider,
-  Grid,
-  Button,
-  Chip,
-  Paper,
-} from "@mui/material";
+import { Card, CardContent, Avatar, Typography, Box, Divider, Grid, Button, Chip, Paper } from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -20,9 +9,12 @@ import EditIcon from "@mui/icons-material/Edit";
 import JobPost from "../subComponents/jobPost";
 import "../Styles/features.css";
 import { useState } from "react";
+import { useContextProvider } from "../providers";
 
-const Mprofile = ({ userData, jobPosts = [] }) => {
-  // Sample user data - replace with actual data from your application
+const Mprofile = ({jobPosts = [] }) => {
+
+  const {user: userData} = useContextProvider();
+
   const user = userData || {
     name: "John Doe",
     email: "john.doe@example.com",
