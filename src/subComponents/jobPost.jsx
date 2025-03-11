@@ -1,64 +1,82 @@
-import { useState } from 'react';
-import { 
-  Box, 
-  Modal, 
-  Typography, 
-  TextField, 
-  Button, 
+import { useState } from "react";
+import {
+  Box,
+  Modal,
+  Typography,
+  TextField,
+  Button,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
   Grid,
   Divider,
-  IconButton
+  IconButton,
 } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
+import { useContextProvider } from "../providers";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const JobPost = ({ open, handleClose, userId }) => {
+const JobPost = ({ open, handleClose }) => {
+  const { user: userId, server, setLoading, loading } = useContextProvider();
   const [formData, setFormData] = useState({
-    title: '',
-    company: '',
-    location: '',
-    employmentType: 'Full-time',
-    experience: '',
-    salary: '',
-    description: '',
-    requirements: '',
-    benefits: '',
-    validity: '',
-    person: userId || ''
+    title: "",
+    company: "",
+    location: "",
+    employmentType: "Full-time",
+    experience: "",
+    salary: "",
+    description: "",
+    requirements: "",
+    benefits: "",
+    validity: "",
+    person: userId?._id || "",
   });
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    
-    // Format data to match the expected API request structure
     const requestData = {
       companyName: formData.company,
       post: formData.title,
       description: formData.description,
       validity: formData.validity,
-      // Include other fields that might be needed
       location: formData.location,
       employmentType: formData.employmentType,
       experience: parseInt(formData.experience) || 0,
       salary: parseInt(formData.salary) || 0,
       requirements: formData.requirements,
       benefits: formData.benefits,
-      person: formData.person
+      person: formData.person,
     };
+    setLoading(true);
+    // console.log("Job Post Data:", requestData);
+    try {
+        const {data} = await axios(`${server}/jobPost/create`, 
+            {requestData},
+            {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                withCredentials: true,
+            }
+        );
+        toast.success(data.message);
+        setLoading(false);
+    } catch (error) {
+        toast.error(error.response.data.message);
+        setLoading(false);
+    }
+
     
-    console.log('Job Post Data:', requestData);
-    // Add your API call to submit the job post
     handleClose();
   };
 
@@ -78,12 +96,12 @@ const JobPost = ({ open, handleClose, userId }) => {
   };
 
   const employmentTypes = [
-    'Full-time',
-    'Part-time',
-    'Contract',
-    'Temporary',
-    'Internship',
-    'Remote'
+    "Full-time",
+    "Part-time",
+    "Contract",
+    "Temporary",
+    "Internship",
+    "Remote",
   ];
 
   return (
@@ -93,17 +111,27 @@ const JobPost = ({ open, handleClose, userId }) => {
       aria-labelledby="job-post-modal-title"
     >
       <Box sx={style}>
-        <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
-          <Typography id="job-post-modal-title" variant="h5" component="h2" fontWeight="bold">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          mb={2}
+        >
+          <Typography
+            id="job-post-modal-title"
+            variant="h5"
+            component="h2"
+            fontWeight="bold"
+          >
             Create New Job Posting
           </Typography>
           <IconButton onClick={handleClose} size="small">
             <CloseIcon />
           </IconButton>
         </Box>
-        
+
         <Divider sx={{ mb: 3 }} />
-        
+
         <form onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
@@ -149,7 +177,9 @@ const JobPost = ({ open, handleClose, userId }) => {
                   onChange={handleChange}
                 >
                   {employmentTypes.map((type) => (
-                    <MenuItem key={type} value={type}>{type}</MenuItem>
+                    <MenuItem key={type} value={type}>
+                      {type}
+                    </MenuItem>
                   ))}
                 </Select>
               </FormControl>
@@ -231,20 +261,17 @@ const JobPost = ({ open, handleClose, userId }) => {
             </Grid>
             <Grid item xs={12}>
               <Box display="flex" justifyContent="flex-end" gap={2} mt={2}>
-                <Button 
-                  variant="outlined" 
-                  onClick={handleClose}
-                >
+                <Button variant="outlined" onClick={handleClose}>
                   Cancel
                 </Button>
-                <Button 
-                  type="submit" 
-                  variant="contained" 
-                  sx={{ 
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
                     bgcolor: "#95af29",
                     "&:hover": {
-                      bgcolor: "#7a9124"
-                    }
+                      bgcolor: "#7a9124",
+                    },
                   }}
                 >
                   Submit Job Posting

@@ -14,7 +14,7 @@ import { useContextProvider } from "../providers";
 const Mprofile = ({jobPosts = [] }) => {
 
   const {user: userData} = useContextProvider();
-
+  console.log(userData._id);
   const user = userData || {
     name: "John Doe",
     email: "john.doe@example.com",
