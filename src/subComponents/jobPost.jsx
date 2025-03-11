@@ -45,23 +45,23 @@ const JobPost = ({ open, handleClose }) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const requestData = {
-      companyName: formData.company,
-      post: formData.title,
-      description: formData.description,
-      validity: formData.validity,
+      title: formData.company,
+      company: formData.title,
       location: formData.location,
       employmentType: formData.employmentType,
       experience: parseInt(formData.experience) || 0,
       salary: parseInt(formData.salary) || 0,
+      description: formData.description,
       requirements: formData.requirements,
       benefits: formData.benefits,
+      validity: formData.validity,
       person: formData.person,
     };
     setLoading(true);
     // console.log("Job Post Data:", requestData);
     try {
-        const {data} = await axios(`${server}/jobPost/create`, 
-            {requestData},
+        const {data} = await axios.post(`${server}/jobPost/create`, 
+            requestData,
             {
                 headers: {
                   "Content-Type": "application/json",

@@ -1,4 +1,15 @@
-import { Card, CardContent, Avatar, Typography, Box, Divider, Grid, Button, Chip, Paper } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Avatar,
+  Typography,
+  Box,
+  Divider,
+  Grid,
+  Button,
+  Chip,
+  Paper,
+} from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -11,9 +22,8 @@ import "../Styles/features.css";
 import { useState } from "react";
 import { useContextProvider } from "../providers";
 
-const Mprofile = ({jobPosts = [] }) => {
-
-  const {user: userData} = useContextProvider();
+const Mprofile = ({ jobPosts = [] }) => {
+  const { user: userData } = useContextProvider();
   console.log(userData._id);
   const user = userData || {
     name: "John Doe",
@@ -269,7 +279,6 @@ const Mprofile = ({jobPosts = [] }) => {
         </Card>
       </Paper>
 
-      {/* Job Postings Section with improved styling */}
       <Paper
         elevation={3}
         sx={{ mt: 4, p: 3, borderRadius: 3, bgcolor: "#f5f5f5" }}
