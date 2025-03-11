@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const GetHire = () => {
-  const { type, user } = useContextProvider();
+  const { type, user, mposts} = useContextProvider();
   const [jobPosts, setJobPosts] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const GetHire = () => {
 
       fetchAllJobPosts();
     }
-  }, [type, user]);
+  }, [type, user, mposts]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -41,7 +41,7 @@ const GetHire = () => {
   };
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <Grid container spacing={3}>
         {jobPosts.map((job, index) => (
           <Grid item xs={12} md={6} lg={4} key={index}>

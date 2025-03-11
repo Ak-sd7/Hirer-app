@@ -28,7 +28,7 @@ const Profile = () => {
 
       fetchJobPosts();
     }
-  }, [type, server, user, setMposts]);
+  }, [type, user]);
 
   return (
     <div>

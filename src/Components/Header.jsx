@@ -31,7 +31,6 @@ const Header = () => {
     user,
     server,
     setServer,
-    type
   } = useContextProvider();
 
   const LogOutHandler = async () => {

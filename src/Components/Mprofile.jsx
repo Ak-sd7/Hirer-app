@@ -20,6 +20,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import JobPost from "../subComponents/jobPost";
 import "../Styles/features.css";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { useContextProvider } from "../providers";
 
 const Mprofile = ({ jobPosts }) => {
@@ -484,5 +485,9 @@ const Mprofile = ({ jobPosts }) => {
     </div>
   );
 };
+Mprofile.propTypes = {
+  jobPosts: PropTypes.array.isRequired,
+};
 
 export default Mprofile;
+

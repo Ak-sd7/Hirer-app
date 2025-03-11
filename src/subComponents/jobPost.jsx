@@ -19,7 +19,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const JobPost = ({ open, handleClose }) => {
-  const { user: userId, server, setLoading, loading } = useContextProvider();
+  const { user: userId, server, setLoading, setMposts } = useContextProvider();
   const [formData, setFormData] = useState({
     title: "",
     company: "",
@@ -69,6 +69,7 @@ const JobPost = ({ open, handleClose }) => {
                 withCredentials: true,
             }
         );
+        setMposts(data.post);
         toast.success(data.message);
         setLoading(false);
     } catch (error) {

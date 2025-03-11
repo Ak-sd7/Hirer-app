@@ -12,8 +12,6 @@ import "./Styles/App.css";
 import { useContextProvider } from "./providers";
 import { useEffect } from "react";
 import axios from "axios";
-import Mprofile from "./Components/Mprofile";
-import Aprofile from "./Components/Aprofile";
 
 function App() {
   const { setIsAuthenticated, setUser, setLoading, server, user } =
