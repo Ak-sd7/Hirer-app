@@ -23,8 +23,11 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { useContextProvider } from "../providers";
 
-const Mprofile = ({ jobPosts }) => {
+const Mprofile = ({ jobPosts, onPostCreated }) => {
   const { user: userData } = useContextProvider();
+  // Ensure jobPosts is always an array
+  const posts = Array.isArray(jobPosts) ? jobPosts : [];
+  
   console.log(userData._id);
   const user = userData || {
     name: "John Doe",
@@ -37,7 +40,13 @@ const Mprofile = ({ jobPosts }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    // Call onPostCreated when modal is closed after submission
+    if (onPostCreated) {
+      onPostCreated();
+    }
+  };
 
   // Function to format date
   const formatDate = (dateString) => {
@@ -60,7 +69,6 @@ const Mprofile = ({ jobPosts }) => {
 
   return (
     <div className="Card">
-      {/* Profile Information Section with improved styling */}
       <Paper
         elevation={3}
         sx={{
@@ -339,7 +347,7 @@ const Mprofile = ({ jobPosts }) => {
 
         <Divider sx={{ mb: 3 }} />
 
-        {jobPosts.length === 0 ? (
+        {posts.length === 0 ? (
           <Card
             sx={{
               p: 4,
@@ -369,7 +377,7 @@ const Mprofile = ({ jobPosts }) => {
           </Card>
         ) : (
           <Grid container spacing={3}>
-            {jobPosts.map((job, index) => (
+            {posts.map((job, index) => (
               <Grid item xs={12} md={6} lg={4} key={index}>
                 <Card
                   sx={{
@@ -485,9 +493,10 @@ const Mprofile = ({ jobPosts }) => {
     </div>
   );
 };
+
 Mprofile.propTypes = {
   jobPosts: PropTypes.array.isRequired,
+  onPostCreated: PropTypes.func
 };
 
 export default Mprofile;
-

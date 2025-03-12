@@ -1,12 +1,13 @@
 import axios from "axios";
-import { useEffect } from "react";
-import Aprofile from "../Components/Aprofile"
-import Mprofile from "../Components/Mprofile"
-import { useContextProvider } from "../providers"
+import { useEffect, useState } from "react";
+import Aprofile from "../Components/Aprofile";
+import Mprofile from "../Components/Mprofile";
+import { useContextProvider } from "../providers";
 import toast from "react-hot-toast";
 
 const Profile = () => {
   const { type, server, user, setMposts, mposts } = useContextProvider();
+  const [isUpdated, setIsUpdated] = useState(false);
 
   useEffect(() => {
     // Only fetch if we're a muser and have a user object with an ID
@@ -17,8 +18,12 @@ const Profile = () => {
             withCredentials: true,
           });
           
-          // The data comes in the data property of the response
-          setMposts(response.data.posts);
+          // Ensure we're setting an array
+          const postsArray = Array.isArray(response.data.posts) 
+            ? response.data.posts 
+            : [];
+          
+          setMposts(postsArray);
           console.log("Posts fetched:", response.data);
         } catch (error) {
           console.error("Error fetching job posts:", error);
@@ -28,11 +33,23 @@ const Profile = () => {
 
       fetchJobPosts();
     }
-  }, [type, user]);
+  }, [type, user, server, setMposts, isUpdated]);
+
+  // Force a refresh when a new post is created
+  const handlePostCreated = () => {
+    setIsUpdated(prev => !prev);
+  };
 
   return (
     <div>
-      {type === "musers" ? <Mprofile jobPosts={mposts || []} /> : <Aprofile />}
+      {type === "musers" ? (
+        <Mprofile 
+          jobPosts={Array.isArray(mposts) ? mposts : []} 
+          onPostCreated={handlePostCreated}
+        />
+      ) : (
+        <Aprofile />
+      )}
     </div>
   );
 };

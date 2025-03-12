@@ -45,8 +45,8 @@ const JobPost = ({ open, handleClose }) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     const requestData = {
-      title: formData.company,
-      company: formData.title,
+      title: formData.title,
+      company: formData.company,
       location: formData.location,
       employmentType: formData.employmentType,
       experience: parseInt(formData.experience) || 0,
@@ -58,7 +58,7 @@ const JobPost = ({ open, handleClose }) => {
       person: formData.person,
     };
     setLoading(true);
-    // console.log("Job Post Data:", requestData);
+    
     try {
         const {data} = await axios.post(`${server}/jobPost/create`, 
             requestData,
@@ -69,16 +69,48 @@ const JobPost = ({ open, handleClose }) => {
                 withCredentials: true,
             }
         );
-        setMposts(data.post);
+        
+        // fetch all posts
+        if (userId && userId._id) {
+            try {
+                const response = await axios.get(`${server}/jobPost/getPostsById/${userId._id}`, {
+                    withCredentials: true,
+                });
+                
+                // setting an array
+                if (response.data && response.data.posts) {
+                    const postsArray = Array.isArray(response.data.posts) 
+                        ? response.data.posts 
+                        : [];
+                    setMposts(postsArray);
+                }
+            } catch (fetchError) {
+                console.error("Error fetching updated posts:", fetchError);
+            }
+        }
+        
         toast.success(data.message);
         setLoading(false);
+        handleClose();
+        
+        // Reset form data
+        setFormData({
+            title: "",
+            company: "",
+            location: "",
+            employmentType: "Full-time",
+            experience: "",
+            salary: "",
+            description: "",
+            requirements: "",
+            benefits: "",
+            validity: "",
+            person: userId?._id || "",
+        });
     } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response?.data?.message || "Failed to create job post");
         setLoading(false);
     }
-
-    
-    handleClose();
   };
 
   const style = {
