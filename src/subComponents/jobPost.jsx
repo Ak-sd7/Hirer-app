@@ -17,7 +17,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useContextProvider } from "../providers";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { application } from "../providers";
 
+// eslint-disable-next-line react/prop-types
 const JobPost = ({ open, handleClose }) => {
   const { user: userId, server, setLoading, setMposts } = useContextProvider();
   const [formData, setFormData] = useState({
@@ -69,7 +71,25 @@ const JobPost = ({ open, handleClose }) => {
                 withCredentials: true,
             }
         );
-        
+        // console.log(data);
+        try {
+          const res = await axios.post(`${application}/create/${data.post._id}`, {
+              jobId: data.post._id,
+              recruiterId: userId?._id,
+              applicantIds: [],
+          }, {
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              withCredentials: true,
+          });
+  
+          console.log(res);
+        } catch (error) {
+          toast.error(error.response?.data?.message || error.message || "Failed to create job post");
+          setLoading(false);
+        }
+
         // fetch all posts
         if (userId && userId._id) {
             try {
@@ -108,7 +128,7 @@ const JobPost = ({ open, handleClose }) => {
             person: userId?._id || "",
         });
     } catch (error) {
-        toast.error(error.response?.data?.message || "Failed to create job post");
+        toast.error(error.response?.data?.message || error.message || "Failed to create job post");
         setLoading(false);
     }
   };

@@ -43,3 +43,5 @@ export const useContextProvider = () => {
 };
 
 export default Context;
+
+export const application = "http://localhost:3000/api/v1/application/";
