@@ -155,11 +155,6 @@ const GetHire = () => {
                     }}
                     onClick={() => {
                       handleOpenModal(job);
-                      <DisplayDetails
-                        open={modalOpen}
-                        handleClose={handleCloseModal}
-                        jobDetails={selectedJob}
-                      />;
                     }}
                   >
                     View Details
@@ -182,6 +177,12 @@ const GetHire = () => {
           </Grid>
         ))}
       </Grid>
+      <DisplayDetails
+        open={modalOpen}
+        handleClose={handleCloseModal}
+        jobDetails={selectedJob}
+      />
+      ;
     </div>
   );
 };
