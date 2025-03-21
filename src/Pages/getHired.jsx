@@ -1,20 +1,35 @@
-import { Card, CardContent, Chip, Divider, Typography, Box, Grid, Button } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Chip,
+  Divider,
+  Typography,
+  Box,
+  Grid,
+  Button,
+} from "@mui/material";
 import { useContextProvider } from "../providers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import DisplayDetails from "../Components/displayDetails";
 
 const GetHire = () => {
-  const { type, user, mposts} = useContextProvider();
+  const { type, user, mposts } = useContextProvider();
   const [jobPosts, setJobPosts] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
     if (user && user._id) {
       const fetchAllJobPosts = async () => {
         try {
-          const response = await axios.get(`http://localhost:3000/api/v1/musers/jobPost/getAllPost`, {
-            withCredentials: true,
-          });
+          const response = await axios.get(
+            `http://localhost:3000/api/v1/musers/jobPost/getAllPost`,
+            {
+              withCredentials: true,
+            }
+          );
 
           // The data comes in the data property of the response
           setJobPosts(response.data.posts);
@@ -38,6 +53,15 @@ const GetHire = () => {
       month: "long",
       day: "numeric",
     });
+  };
+
+  const handleOpenModal = (job) => {
+    setSelectedJob(job);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -128,6 +152,14 @@ const GetHire = () => {
                         borderColor: "#1e2424",
                         bgcolor: "rgba(62, 70, 70, 0.1)",
                       },
+                    }}
+                    onClick={() => {
+                      handleOpenModal(job);
+                      <DisplayDetails
+                        open={modalOpen}
+                        handleClose={handleCloseModal}
+                        jobDetails={selectedJob}
+                      />;
                     }}
                   >
                     View Details
