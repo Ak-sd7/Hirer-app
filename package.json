@@ -15,7 +15,7 @@
     "@motionone/utils": "^10.17.0",
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^5.14.4",
-    "axios": "^1.7.4",
+    "axios": "^1.8.2",
     "framer-motion": "^11.0.8",
     "hirer": "file:",
     "keen-slider": "^6.8.6",
