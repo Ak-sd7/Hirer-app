@@ -18,10 +18,13 @@ import {
   import PaymentsIcon from "@mui/icons-material/Payments";
   import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
   import SchoolIcon from "@mui/icons-material/School";
+  import { application } from "../providers";
+  import axios from "axios";
+import toast from "react-hot-toast";
+
   
   const DisplayDetails = ({ open, handleClose, jobDetails }) => {
     if (!jobDetails) return null;
-  
     const formatDate = (dateString) => {
       const date = new Date(dateString);
       return date.toLocaleDateString("en-US", {
@@ -30,6 +33,28 @@ import {
         day: "numeric",
       });
     };
+
+    const ApplyHandler = async() => {
+      try{
+        const {data} = await axios.post(`${application}/addApplicant/${jobDetails._id}`,
+          {},
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
+        toast.success(data.message || "Application submitted successfully");
+      }
+      catch(error){
+        const errorMessage = error.response?.data?.message || 
+                             "Failed to submit application. Please try again.";
+        
+        toast.error(errorMessage);
+        console.error("Application submission error:", error);
+      }
+    }
   
     return (
       <Dialog 
@@ -244,6 +269,7 @@ import {
                 bgcolor: "#7a9124",
               },
             }}
+            onClick={ApplyHandler}
           >
             Apply Now
           </Button>
