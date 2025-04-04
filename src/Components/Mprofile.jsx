@@ -22,12 +22,15 @@ import "../Styles/features.css";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { useContextProvider } from "../providers";
+import DisplayDetails from "./displayDetails";
 
 const Mprofile = ({ jobPosts, onPostCreated }) => {
   const { user: userData } = useContextProvider();
   // Ensure jobPosts is always an array
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
   const posts = Array.isArray(jobPosts) ? jobPosts : [];
-  
+
   console.log(userData._id);
   const user = userData || {
     name: "John Doe",
@@ -48,6 +51,13 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
     }
   };
 
+  const handleOpenModal = (job) => {
+    setSelectedJob(job);
+    setModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   // Function to format date
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -467,6 +477,9 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
                             bgcolor: "rgba(62, 70, 70, 0.1)",
                           },
                         }}
+                        onClick={() => {
+                          handleOpenModal(job);
+                        }}
                       >
                         View Details
                       </Button>
@@ -489,6 +502,12 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
             ))}
           </Grid>
         )}
+        <DisplayDetails
+          open={modalOpen}
+          handleClose={handleCloseModal}
+          jobDetails={selectedJob}
+          muserDisplay="true"
+        />
       </Paper>
     </div>
   );
@@ -496,7 +515,7 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
 
 Mprofile.propTypes = {
   jobPosts: PropTypes.array.isRequired,
-  onPostCreated: PropTypes.func
+  onPostCreated: PropTypes.func,
 };
 
 export default Mprofile;

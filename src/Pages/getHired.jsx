@@ -159,18 +159,6 @@ const GetHire = () => {
                   >
                     View Details
                   </Button>
-                  <Button
-                    size="small"
-                    variant="contained"
-                    sx={{
-                      bgcolor: "#95af29",
-                      "&:hover": {
-                        bgcolor: "#7a9124",
-                      },
-                    }}
-                  >
-                    Applications ({job.applications || 0})
-                  </Button>
                 </Box>
               </CardContent>
             </Card>
@@ -181,6 +169,7 @@ const GetHire = () => {
         open={modalOpen}
         handleClose={handleCloseModal}
         jobDetails={selectedJob}
+        muserDisplay = "false"
       />
       ;
     </div>
