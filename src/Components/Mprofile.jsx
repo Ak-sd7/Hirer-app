@@ -9,6 +9,7 @@ import {
   Button,
   Chip,
   Paper,
+  IconButton,
 } from "@mui/material";
 import BusinessIcon from "@mui/icons-material/Business";
 import EmailIcon from "@mui/icons-material/Email";
@@ -17,6 +18,7 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AddIcon from "@mui/icons-material/Add";
 import WorkIcon from "@mui/icons-material/Work";
 import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import JobPost from "../subComponents/jobPost";
 import "../Styles/features.css";
 import { useState } from "react";
@@ -402,10 +404,49 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h6" gutterBottom fontWeight="bold">
-                      {job.title}
-                    </Typography>
-
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        mb: 2,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Typography
+                        variant="h6"
+                        fontWeight="bold"
+                        sx={{ mr: 1, mb: 0 }}
+                      >
+                        {job.title}
+                      </Typography>
+                      <Box>
+                        <IconButton
+                          size="small"
+                          sx={{
+                            color: "#3e4646",
+                            backgroundColor: "#f5f5f5",
+                            mr: 1,
+                            "&:hover": {
+                              backgroundColor: "#e0e0e0",
+                            },
+                          }}
+                        >
+                          <EditIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          sx={{
+                            color: "#e53935",
+                            backgroundColor: "#fff0f0",
+                            "&:hover": {
+                              backgroundColor: "#ffdddd",
+                            },
+                          }}
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                      </Box>
+                    </Box>
                     <Box sx={{ display: "flex", mb: 2 }}>
                       <Chip
                         label={job.employmentType}
@@ -421,11 +462,13 @@ const Mprofile = ({ jobPosts, onPostCreated }) => {
                         label={`₹${job.salary}`}
                         size="small"
                         sx={{
+                          mr: 1,
                           bgcolor: "#95af29",
                           color: "white",
                           fontWeight: "medium",
                         }}
                       />
+                      <Typography variant="body2">•••</Typography>
                     </Box>
 
                     <Typography
